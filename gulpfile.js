@@ -1,28 +1,49 @@
 'use strict';
 
+/* Import Gulp and All Dependency */
 var gulp       = require('gulp'),
-	  sass       = require('gulp-sass'),
+    sass       = require('gulp-sass'),
     rename     = require('gulp-rename'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    concat     = require('gulp-concat'),
+    notify     = require('gulp-notify');
 
 gulp.task('default', function () {
-  return gulp.src('./sass/style.scss')
+  return gulp.src('./sass/*.scss')
   	.pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(rename('style.css'))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./css/'))
+    .pipe(notify({
+      title: 'Gulp Notification',
+      message: "Generating all SCSS file Finished at <%= options.date %>",
+      templateOptions: {
+        date: new Date()
+      },
+      onLast: true
+    }));
 });
 
 gulp.task('build', function () {
-  return gulp.src('./sass/style.scss')
+  return gulp.src('./sass/*.scss')
+    .pipe(concat('bundle.scss'))
   	.pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('./css'));
+    .pipe(rename('bundle.min.css'))
+    .pipe(gulp.dest('./css/'))
+    .pipe(notify({
+      title: 'Gulp Bundle Notification',
+      message: "Compile and Minify file <%= file.relative %> has Finished at <%= options.date %>",
+      templateOptions: {
+        date: new Date()
+      },
+      onLast: true
+    }));
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./sass/**/*.scss', ['default']);
+	gulp.watch(['./sass/*.scss', './sass/**/*.scss'], ['default']);
 });

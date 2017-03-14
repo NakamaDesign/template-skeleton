@@ -17,7 +17,8 @@ Just clone / download this project and run `npm install`, don't forget to instal
 - JQuery v3.1.1
 - Font Awesome
 - SASS
-- Gulp (Convert SASS to CSS)
+- Gulp Sass (Convert SASS to CSS)
+- Gulp Notify (Notify when build finish)
 - Meta Tags for SEO
 - Animate CSS
 - Aimate On Scroll (AOS)
@@ -27,11 +28,16 @@ Just clone / download this project and run `npm install`, don't forget to instal
 - Flat UI Color
 
 ### Gulp Docs
-`gulp` for initial build `style.css`
+`gulp` or `npm run start` for build all scss file to convert to css
 
-`gulp watch` for watching build `style.scss`
+`gulp watch` or `npm run watch` for watching all scss file
 
-`gulp build` for build `style.scss` for production in minify mode
+`gulp build` or `npm run build` for build all scss file to bundle.min.css for production in minify mode
+
+#### Note : Build and Bundle function will be effect in root folder ./sass/ only not in subdirectories of ./sass/ folder.
+#### If you want to change this function just change gulp.src to `['./sass/*.scss','./sass/**/*.scss']` or other configuration.
+
+#### For more information and hire just contact me at gmail (muhibbudinsuretno1@gmail.com). Thanks
 
 ### License
 
