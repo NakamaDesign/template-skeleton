@@ -9,7 +9,7 @@ var gulp       = require('gulp'),
     notify     = require('gulp-notify');
 
 gulp.task('default', function () {
-  return gulp.src('./sass/*.scss')
+  return gulp.src('./scss/*.scss')
   	.pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
@@ -25,7 +25,7 @@ gulp.task('default', function () {
 });
 
 gulp.task('build', function () {
-  return gulp.src('./sass/*.scss')
+  return gulp.src('./scss/*.scss')
     .pipe(concat('bundle.scss'))
   	.pipe(sourcemaps.init())
     .pipe(sass({
@@ -45,5 +45,5 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['./sass/*.scss', './sass/**/*.scss'], ['default']);
+	gulp.watch(['./scss/*.scss', './scss/**/*.scss'], ['default']);
 });

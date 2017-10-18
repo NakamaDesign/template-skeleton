@@ -1,8 +1,9 @@
 /* Import Color */
-@import "color/flat.scss";
-
-/* Import Function */
-@import "mixin/function.scss";
+@import
+	"helper/color",
+	"helper/function",
+	"icon/font-awesome.scss",
+	"icon/ion-icons.scss";
 
 // Sample code
 .sample {
