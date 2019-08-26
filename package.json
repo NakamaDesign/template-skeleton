@@ -12,7 +12,7 @@
   "author": "Muhibbudin Suretno <muhibbudinsuretno1@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.0",
     "gulp-sourcemaps": "^2.4.1",
