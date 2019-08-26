@@ -9,7 +9,7 @@
     "build": "gulp build"
   },
   "keywords": [],
-  "author": "Muhibbudin Suretno",
+  "author": "Muhibbudin Suretno <muhibbudinsuretno1@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "gulp": "^3.9.1",
