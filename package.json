@@ -17,6 +17,6 @@
     "gulp-sass": "^4.0.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-concat": "^2.6.1",
-    "gulp-notify": "^3.0.0"
+    "gulp-notify": "^4.0.0"
   }
 }
